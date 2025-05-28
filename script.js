@@ -77,7 +77,46 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Contact Form
+// Notification System
+function showNotification(message, type = 'success') {
+    // Remove any existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    
+    // Add icon based on type
+    const icon = document.createElement('i');
+    icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+    notification.appendChild(icon);
+    
+    // Add message
+    const messageText = document.createElement('span');
+    messageText.textContent = message;
+    notification.appendChild(messageText);
+    
+    // Add to document
+    document.body.appendChild(notification);
+    
+    // Show notification
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    // Remove notification after 5 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 5000);
+}
+
+// Update Contact Form Handler
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -89,10 +128,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Simple validation
     if (name && email && message) {
         // Simulate form submission
-        alert('Thank you for your message! I\'ll get back to you soon.');
+        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
         this.reset();
     } else {
-        alert('Please fill in all fields.');
+        showNotification('Please fill in all fields.', 'error');
     }
 });
 
