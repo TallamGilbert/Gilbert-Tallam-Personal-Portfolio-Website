@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilbert Tallam - Backend Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Gilbert Tallam</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Hi, I'm Gilbert.</h1>
+                <p class="subtitle">Aspiring Backend Developer | Tech Explorer | Builder of Practical Digital Tools</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                    <a href="assets/Gilbert_Tallam_CV.pdf" download class="btn btn-download">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Me</h2>
+                <p class="subtitle">Gilbert Tallam - Backend Developer</p>
+            </div>
+            <div class="about-container fade-in">
+                <div class="about-image">
+                    <img src="assets/profile-image.jpg" alt="Gilbert Tallam">
+                </div>
+                <div class="about-text">
+                    <p>I'm Gilbert, a self-taught developer based in Kenya with a growing passion for building web applications. 
+                        My main focus is on backend development, and I'm currently learning PHP and Laravel to create clean, functional, and scalable systems.</p>
+                    <p>I also have basic skills in HTML, CSS, and JavaScript, which I use to bring simple user interfaces to life.
+                        Most of my learning comes from hands-on experience through small personal projects that help me improve one step at a time.</p>
+                    <p>I enjoy solving real problems with code, and I'm always looking to grow, collaborate, and explore new technologies.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/gilbert-tallam-6ba34b263" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/Gilbert_Belion" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="skills" class="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Tech Stack</h2>
+                <p>Technologies and tools I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-php"></i>
+                    <p>PHP</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-laravel"></i>
+                    <p>Laravel</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <p>MySQL</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt"></i>
+                    <p>Git & GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <p>VS Code</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Featured Projects</h2>
+                <p>Here are some projects I've worked on:</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Belion Foods</h3>
+                        <p>Organic restaurant website with clean, responsive, green-themed design.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://belion-foods-organic-restaurant.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TallamGilbert/Belion-Foods---Organic-Restaurant-Website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>The Big Fish Westlands</h3>
+                        <p>Seafood restaurant site with menu and delivery links.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://the-big-fish-westlands-restaurant-website.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TallamGilbert/The-Big-Fish-Westlands---Restaurant-Website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Acacia Nectar</h3>
+                        <p>Minimalist design website for pure Baringo honey business.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://acacia-nectar-website.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TallamGilbert/Acacia-nectar-website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Expense Tracker with MPesa</h3>
+                        <p>A practical tool that helps users monitor finances using MPesa (Coming Soon).</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="flex: 1;">
+                                <i class="fas fa-clock"></i> Coming Soon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Learning Assistant</h3>
+                        <p>AI-powered coding guide for beginners (Under Development).</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">OpenAI API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="flex: 1;">
+                                <i class="fas fa-clock"></i> Coming Soon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Artisan Home Furniture</h3>
+                        <p>A modern, responsive e-commerce website for premium furniture, featuring product collections, store locations, and custom design requests.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://artisanhomefurnitures.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TallamGilbert/Artisan-Home-Furnitures" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Let's Work Together</h2>
+                <p>I'm always open to discussing new opportunities and interesting projects.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Get In Touch</h3>
+                    <p>Want to collaborate or ask a question?</p>
+                    <div class="contact-links">
+                        <a href="mailto:tallamgilbert02@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            tallamgilbert02@gmail.com
+                        </a>
+                        <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            GitHub Profile
+                        </a>
+                        <a href="https://linkedin.com/in/gilbert-tallam-6ba34b263" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn Profile
+                        </a>
+                        <a href="https://x.com/Gilbert_Belion" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <i class="fab fa-twitter"></i>
+                            Twitter Profile
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gilbert Tallam</h3>
+                    <p>Backend Developer passionate about building practical digital solutions.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/gilbert-tallam-6ba34b263" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/Gilbert_Belion" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> tallamgilbert02@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gilbert Tallam. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart"></i> and passion</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
