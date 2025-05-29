@@ -295,8 +295,11 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form fade-in" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form class="contact-form fade-in" id="contactForm" name="contact" method="POST" data-netlify="true" action="/?success=true" netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact" />
+                    <div hidden>
+                        <input name="bot-field" />
+                    </div>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>

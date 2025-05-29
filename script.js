@@ -131,16 +131,29 @@ if (contactForm) {
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
-            // Submit the form
+            // Get form data
             const formData = new FormData(contactForm);
-            const response = await fetch('/', {
+            const formProps = Object.fromEntries(formData);
+            
+            // Log form data for debugging
+            console.log('Form data:', formProps);
+            
+            // Submit the form
+            const response = await fetch(contactForm.action, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                headers: { 
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
                 body: new URLSearchParams(formData).toString()
             });
             
-            if (response.ok) {
+            // Log response for debugging
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+            
+            if (response.ok || response.status === 200) {
                 // Show success message
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
                 submitButton.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
                 contactForm.reset();
                 
@@ -150,10 +163,13 @@ if (contactForm) {
                     submitButton.innerHTML = originalButtonText;
                 }, 3000);
             } else {
-                throw new Error('Form submission failed');
+                const errorText = await response.text();
+                console.error('Form submission failed:', errorText);
+                throw new Error(`Form submission failed: ${response.status} ${response.statusText}`);
             }
         } catch (error) {
-            // Show error message
+            console.error('Form submission error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
             submitButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error!';
             
             // Reset button after 3 seconds
