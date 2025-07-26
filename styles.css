@@ -25,6 +25,7 @@
     --border-color: #374151;  /* Dark border */
 }
 
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
@@ -944,23 +945,27 @@ body {
 }
 
 .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 1.5rem;
-    margin-top: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .blog-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 300px;
-    margin: 0 auto;
+    flex: 0 0 auto;
+    width: 300px;
+    scroll-snap-align: start;
+}
+.blog-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.blog-grid {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
 }
 
 .blog-card:hover {
@@ -1030,3 +1035,4 @@ body {
         max-width: 280px;
     }
 } 
+
