@@ -1,45 +1,31 @@
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
 const body = document.body;
-const themeIcon = themeToggle.querySelector('i');
 
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
-    body.setAttribute('data-theme', 'dark');
-    themeIcon.classList.replace('fa-moon', 'fa-sun');
+// Check for saved theme or default to light
+const currentTheme = localStorage.getItem('theme') || 'light';
+body.setAttribute('data-theme', currentTheme);
+
+if (currentTheme === 'dark') {
+    themeIcon.className = 'fas fa-sun';
 }
 
 themeToggle.addEventListener('click', () => {
     const currentTheme = body.getAttribute('data-theme');
-    
-    if (currentTheme === 'dark') {
-        body.removeAttribute('data-theme');
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'dark');
-    }
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 });
 
-// Mobile Navigation
-const mobileToggle = document.getElementById('mobileToggle');
-const navMenu = document.getElementById('navMenu');
+// Navbar and progress bar
+const navbar = document.getElementById('navbar');
+const progressBar = document.getElementById('progressBar');
 
-mobileToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// Smooth Scrolling
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -53,147 +39,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll Progress Bar
+// Active navigation link
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+// Combined scroll handler for: navbar style, progress bar, and active link highlighting
 window.addEventListener('scroll', () => {
-    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    document.getElementById('progressBar').style.width = scrolled + '%';
-});
+    // Navbar scrolled class
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 
-// Fade In Animation on Scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    // Progress bar
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolledPercent = (winScroll / height) * 100;
+    progressBar.style.width = scrolledPercent + "%";
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// Notification System
-function showNotification(message, type = 'success') {
-    // Remove any existing notifications
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    
-    // Add icon based on type
-    const icon = document.createElement('i');
-    icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
-    notification.appendChild(icon);
-    
-    // Add message
-    const messageText = document.createElement('span');
-    messageText.textContent = message;
-    notification.appendChild(messageText);
-    
-    // Add to document
-    document.body.appendChild(notification);
-    
-    // Show notification
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-    
-    // Remove notification after 5 seconds
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 5000);
-}
-
-// Contact Form Handling
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.innerHTML;
-        
-        try {
-            // Disable submit button and show loading state
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const formProps = Object.fromEntries(formData);
-            
-            // Log form data for debugging
-            console.log('Form data:', formProps);
-            
-            // Submit the form
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(formData).toString()
-            });
-            
-            // Log response for debugging
-            console.log('Response status:', response.status);
-            console.log('Response ok:', response.ok);
-            
-            if (response.ok || response.status === 200) {
-                // Show success message
-                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-                submitButton.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                contactForm.reset();
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalButtonText;
-                }, 3000);
-            } else {
-                const errorText = await response.text();
-                console.error('Form submission failed:', errorText);
-                throw new Error(`Form submission failed: ${response.status} ${response.statusText}`);
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
-            submitButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error!';
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
-            }, 3000);
-        }
-    });
-}
-
-// Active Navigation Link
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
+    // Active link highlight
     let current = '';
     sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop <= 100) {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -202,32 +71,52 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Typing Animation for Hero Text
-const heroTitle = document.querySelector('.hero-content h1');
-const originalText = heroTitle.textContent;
-let index = 0;
+// Form submission
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function (e) {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
 
-function typeWriter() {
-    if (index < originalText.length) {
-        heroTitle.textContent = originalText.slice(0, index + 1);
-        index++;
-        setTimeout(typeWriter, 100);
-    }
-}
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
 
-// Start typing animation when page loads
-window.addEventListener('load', () => {
-    heroTitle.textContent = '';
-    setTimeout(typeWriter, 1000);
+    setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 3000);
 });
 
-// Add some interactive hover effects
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px) scale(1.02)';
+// Intersection observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-}); 
+}, observerOptions);
+
+document.querySelectorAll('section, .project-card').forEach(el => {
+    observer.observe(el);
+});
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  });
+});
+
+
+
+

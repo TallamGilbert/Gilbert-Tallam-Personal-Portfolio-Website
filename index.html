@@ -3,50 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gilbert Tallam - Backend Developer specializing in PHP and Laravel. Building practical digital solutions.">
     <title>Gilbert Tallam - Backend Developer</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/Favicon.png">
+    
+    <!-- Fonts - Optimized loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+
 </head>
-<body>
+
+<body data-theme="light">
+    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
     
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">Gilbert Tallam</div>
+            <a href="#home" class="logo">Gilbert</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                </li>
             </ul>
-            <button class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            
+           
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="grid-pattern"></div>
+    <div class="geometric-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div> 
+        <!-- ... more dots -->
+    </div>
         <div class="container">
-            <div class="hero-content fade-in">
-                <h1>Hi, I'm Gilbert.</h1>
-                <p class="subtitle">Aspiring Backend Developer | Tech Explorer | Builder of Practical Digital Tools</p>
+            <div class="hero-content">
+                <h1>
+                    Hi, I'm <span class="gradient-text">Gilbert</span>
+                </h1>
+                <p class="subtitle">
+                    Aspiring Backend Developer building with PHP & Laravel
+                </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-code"></i>
-                        View My Work
+                        View Projects
                     </a>
                     <a href="#contact" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i>
-                        Get In Touch
+                        Get in Touch
                     </a>
-                    <a href="assets/Gilbert_Tallam_CV.pdf" download class="btn btn-download">
+                    <a href="assets/Gilbert_Tallam_CV.pdf" download class="btn btn-primary">
                         <i class="fas fa-download"></i>
                         Download CV
                     </a>
@@ -56,27 +95,52 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <h2>About Me</h2>
-                <p class="subtitle">Gilbert Tallam - Backend Developer</p>
+                <p>A bit about my journey and what drives me </p>
             </div>
-            <div class="about-container fade-in">
+            
+            <div class="about-container">
                 <div class="about-image">
-                    <img src="assets/profile-image.jpg" alt="Gilbert Tallam">
+                    <img src="assets/profile-image.jpg" alt="Gilbert Tallam - Backend Developer" loading="lazy">
                 </div>
+                
                 <div class="about-text">
-                    <p>I'm Gilbert, a self-taught developer based in Kenya with a growing passion for building web applications. 
-                        My main focus is on backend development, and I'm currently learning PHP and Laravel to create clean, functional, and scalable systems.</p>
-                    <p>I also have basic skills in HTML, CSS, and JavaScript, which I use to bring simple user interfaces to life.
-                        Most of my learning comes from hands-on experience through small personal projects that help me improve one step at a time.</p>
-                    <p>I enjoy solving real problems with code, and I'm always looking to grow, collaborate, and explore new technologies.</p>
+                    <h3>Backend Developer from Kenya</h3>
+                    <p>
+                       I'm Gilbert, a web developer based in Kenya who builds applications with Laravel and modern web technologies.
+
+                        I specialize in creating full-stack solutions that solve real business problems. 
+                        My approach combines solid backend architecture with clean, responsive user interfaces.
+
+                    
+                        
+                    </p>
+                    <p>
+                        My technical expertise includes PHP, Laravel, JavaScript, MySQL, and the complete web development stack. 
+                        I'm particularly passionate about projects that help traditional businesses embrace digital transformation.
+
+                    </p>
+                    <p>
+                        Whether you need a custom web application or want to discuss how technology can improve your business processes, 
+                        I'd love to connect and explore the possibilities.
+                    </p>
+                    
                     <div class="social-icons">
-                        <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/gilbert-tallam-6ba34b263" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/Gilbert_Belion" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/254743854585?text=Hi%20Gilbert%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/gilbert-tallam-6ba34b263" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/Gilbert_Belion" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/254743854585?text=Hi%20Gilbert%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -127,241 +191,205 @@
         </div>
     </section>
 
+
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <h2>Featured Projects</h2>
-                <p>Here are some projects I've worked on:</p>
+                <p>A showcase of my recent work and ongoing developments</p>
             </div>
+            
             <div class="projects-grid">
-                <div class="project-card fade-in">
+                <!-- Project 1 -->
+                <article class="project-card">
                     <div class="project-image">
                         <i class="fas fa-leaf"></i>
                     </div>
                     <div class="project-content">
                         <h3>Belion Foods</h3>
-                        <p>Organic restaurant website with clean, responsive, green-themed design.</p>
+                        <p>Organic restaurant website with clean, responsive design and modern green aesthetics.</p>
+                        
                         <div class="tech-stack">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
+                        
                         <div class="project-links">
-                            <a href="https://belion-foods-organic-restaurant.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <a href="https://belion-foods-organic-restaurant.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/TallamGilbert/Belion-Foods---Organic-Restaurant-Website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <a href="https://github.com/TallamGilbert/Belion-Foods---Organic-Restaurant-Website" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-fish"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>The Big Fish Westlands</h3>
-                        <p>Seafood restaurant site with menu and delivery links.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://the-big-fish-westlands-restaurant-website.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/TallamGilbert/The-Big-Fish-Westlands---Restaurant-Website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-cookie"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Acacia Nectar</h3>
-                        <p>Minimalist design website for pure Baringo honey business.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://acacia-nectar-website.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/TallamGilbert/Acacia-nectar-website" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Expense Tracker with MPesa</h3>
-                        <p>A practical tool that helps users monitor finances using MPesa (Coming Soon).</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="flex: 1;">
-                                <i class="fas fa-clock"></i> Coming Soon
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>AI Learning Assistant</h3>
-                        <p>AI-powered coding guide for beginners (Under Development).</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">OpenAI API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="flex: 1;">
-                                <i class="fas fa-clock"></i> Coming Soon
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
+                <!-- Project 2 -->
+                <article class="project-card">
                     <div class="project-image">
                         <i class="fas fa-couch"></i>
                     </div>
                     <div class="project-content">
                         <h3>Artisan Home Furniture</h3>
-                        <p>A modern, responsive e-commerce website for premium furniture, featuring product collections, store locations, and custom design requests.</p>
+                        <p>Modern e-commerce website for premium furniture with product collections and custom design requests.</p>
+                        
                         <div class="tech-stack">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
+                        
                         <div class="project-links">
-                            <a href="https://artisanhomefurnitures.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <a href="https://artisanhomefurnitures.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/TallamGilbert/Artisan-Home-Furnitures" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <a href="https://github.com/TallamGilbert/Artisan-Home-Furnitures" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>The Big Fish Westlands</h3>
+                        <p>Seafood restaurant website featuring menu showcase and integrated delivery options.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://the-big-fish-westlands-restaurant-website.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TallamGilbert/The-Big-Fish-Westlands---Restaurant-Website" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Expense Tracker with M-Pesa</h3>
+                        <p>Financial management tool integrating M-Pesa for seamless expense tracking and budgeting.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary" style="opacity: 0.7; cursor: not-allowed;">
+                                <i class="fas fa-clock"></i> In Development
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Learning Assistant</h3>
+                        <p>Intelligent coding companion powered by AI to guide beginners through their programming journey.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-secondary" style="opacity: 0.7; cursor: not-allowed;">
+                                <i class="fas fa-clock"></i> In Development
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Acacia Nectar</h3>
+                        <p>Minimalist website design for a pure Baringo honey business showcasing natural products.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://acacia-nectar-website.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/TallamGilbert/Acacia-nectar-website" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-<!-- Blog Section -->
-<section id="blog" class="blog">
-    <div class="container">
-        <div class="section-header fade-in">
-            <h2>Blog</h2>
-            <p>Sharing my journey and insights</p>
-        </div>
-
-        <!-- FIXED: Only one blog-grid wrapping all blog cards -->
-        <div class="blog-grid">
-            <article class="blog-card fade-in">
-                <div class="blog-image">
-                    <img src="assets/blog-self-taught.jpg" alt="Self-taught developer journey" onerror="this.src='https://miro.medium.com/v2/resize:fit:1400/1*_d8VhBmW1uQ9qGXqXqXqXw.jpeg'">
-                </div>
-                <div class="blog-content">
-                    <h3>Self-Taught Developer in Kenya: My Journey So Far</h3>
-                    <p class="blog-date">June 2025</p>
-                    <p class="blog-excerpt">Sharing my experience as a self-taught developer in Kenya, the challenges I've faced, and the lessons I've learned along the way.</p>
-                    <a href="https://medium.com/@tallamgilbert02/self-taught-developer-in-kenya-my-journey-so-far-5ad69d6ec711" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="fas fa-book-reader"></i> Read on Medium
-                    </a>
-                </div>
-            </article>
-
-            <article class="blog-card fade-in">
-    <div class="blog-image">
-        <img src="assets/Learning in Public.jpg" alt="The Power of Learning in Public" onerror="this.src='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HH1r8O2ljbBL0mwOVqEXFg.jpeg'">
-    </div>
-    <div class="blog-content">
-        <h3>The Power of Learning in Public.</h3>
-        <p class="blog-date">July 2025</p>
-        <p class="blog-excerpt">Discover why blogging and sharing your journey is one of the most powerful tools for learning, building credibility, and connecting with others in your field.</p>
-        <a href="https://medium.com/@GilbertTallam/the-power-of-learning-in-public-why-blogging-and-sharing-your-journey-matters-2ce7cb6cdb4e" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <i class="fas fa-book-reader"></i> Read on Medium
-        </a>
-    </div>
-</article>
-
-        </div>
-    </div>
-</section>
-
-
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <h2>Let's Work Together</h2>
-                <p>I'm always open to discussing new opportunities and interesting projects.</p>
+                <p>Ready to bring your ideas to life? Let's discuss your next project.</p>
             </div>
+            
             <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Get In Touch</h3>
-                    <p>Want to collaborate or ask a question?</p>
-                    <div class="contact-links">
-                        <a href="mailto:tallamgilbert02@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            tallamgilbert02@gmail.com
-                        </a>
-                        <a href="https://wa.me/254743854585?text=Hi%20Gilbert%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <i class="fab fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-                        <a href="https://github.com/TallamGilbert" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <i class="fab fa-github"></i>
-                            GitHub Profile
-                        </a>
-                        <a href="https://linkedin.com/in/gilbert-tallam-6ba34b263" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <i class="fab fa-linkedin"></i>
-                            LinkedIn Profile
-                        </a>
-                        <a href="https://x.com/Gilbert_Belion" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <i class="fab fa-twitter"></i>
-                            Twitter Profile
-                        </a>
+                <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="visually-hidden">
+                        <label for="bot-field">Don't fill this out if you're human:</label>
+                        <input name="bot-field" id="bot-field">
                     </div>
-                </div>
-                <form class="contact-form fade-in" id="contactForm" name="contact" method="POST" data-netlify="true" action="/?success=true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <div hidden>
-                        <input name="bot-field" />
-                    </div>
+                    
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
+                    
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" required placeholder="Tell me about your project or how I can help..."></textarea>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i>
                         Send Message
@@ -393,6 +421,7 @@
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://medium.com/@GilbertTallam" target="_blank">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -408,7 +437,6 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
