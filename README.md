@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Belion Portfolio
 
-# Run and deploy your AI Studio app
+Welcome to my portfolio website! This project showcases my projects, skills, and experience as a developer.
 
-This contains everything you need to run your app locally.
+## About Me
 
-View your app in AI Studio: https://ai.studio/apps/drive/1U27Zh1Vf0hCJEw8wNV9knHtjfhZhb0rb
+Brief introduction about yourself and your background.
 
-## Run Locally
+## Projects
 
-**Prerequisites:**  Node.js
+- **Project 1** - Description of your first project
+- **Project 2** - Description of your second project
+- **Project 3** - Description of your third project
 
+## Skills
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- JavaScript
+- React
+- Node.js
+- HTML & CSS
+- Git
+
+## Contact
+
+- Email: your.email@example.com
+- LinkedIn: [Your Profile](https://linkedin.com)
+- GitHub: [Your Profile](https://github.com)
+
+## License
+
+This project is open source and available under the MIT License.
