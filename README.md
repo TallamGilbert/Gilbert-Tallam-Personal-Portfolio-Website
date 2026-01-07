@@ -1,6 +1,6 @@
 # Belion Portfolio
 
-Welcome to my portfolio website! This project showcases my projects, skills, and experience as a developer.
+Welcome to my portfolio website! This project showcases my projects, skills, and experience as a developer. 
 
 ## About Me
 
@@ -20,11 +20,6 @@ Brief introduction about yourself and your background.
 - HTML & CSS
 - Git
 
-## Contact
-
-- Email: your.email@example.com
-- LinkedIn: [Your Profile](https://linkedin.com)
-- GitHub: [Your Profile](https://github.com)
 
 ## License
 
